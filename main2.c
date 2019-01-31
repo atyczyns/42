@@ -6,7 +6,7 @@
 /*   By: atyczyns <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 09:42:11 by atyczyns          #+#    #+#             */
-/*   Updated: 2018/12/18 09:46:05 by atyczyns         ###   ########.fr       */
+/*   Updated: 2019/01/16 13:18:43 by atyczyns         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int		main(void)
 	char	*rep;
 
 	base = 10;
-	coucou = 247483648;
+	coucou = -2147483648;
+	printf("resultat = %i\n", coucou);
 	rep = ft_itoa_base(coucou, base);
 	printf("resultat = %s\n", rep);
 	return (0);
