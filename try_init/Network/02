@@ -1,0 +1,6 @@
+ifconfig | grep broadcast
+arp -a
+## rev | cut -c1-13 | rev pour afficher juste l'adresse de Broadcast
+## | cut -d '(' -f2 | cut -d ')' -f1 pour afficher uniquement les addresse ip
+## d'un meme reseau
+## pas sur !
