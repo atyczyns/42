@@ -1,3 +1,0 @@
-netstat -nr | grep default | grep en0
-## en1 pour l'en1
-## ajouter cut -c20-32 pour avoir just le gateway
