@@ -1,4 +1,4 @@
-NAME = fdf
+NAME = fractol
 
 CC = gcc
 CCF = -fsanitize=address
@@ -19,7 +19,8 @@ HEADERS_LIST = fdf.h mlx_macro_keys.h
 HEADERS_DIR = ./includes/
 HEADERS = $(addprefix $(HEADERS_DIR), $(HEADERS_LIST))
 
-SRC_LIST = 
+SRC_LIST = srcs/lst_mlx.c \
+		   srcs/main.c
 
 SRC_DIR = ./srcs/
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
@@ -43,7 +44,7 @@ all: $(NAME)
 $(NAME): $(LIBFT) $(MLX) $(OBJ_DIR) $(OBJ)
 	@echo "$(YELLOW)Sources compilation $(RESET)[$(GREEN)OK$(RESET)]\n"
 	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(OBJ) -o $(NAME)
-	@echo "[$(BLUE)FDF Compiled$(RESET)]"
+	@echo "[$(BLUE)FRACTOL Compiled$(RESET)]"
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -70,7 +71,7 @@ fclean: clean
 sani :  $(LIBFT) $(MLX) $(OBJ_DIR) $(OBJ)
 	@echo "$(YELLOW)Sources compilation $(RESET)[$(GREEN)OK$(RESET)]\n"
 	@$(CC) $(CCF) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(OBJ) -o $(NAME)
-	@echo "[$(BLUE)FDF Compiled$(RESET)]"
+	@echo "[$(BLUE)FRACTOL Compiled$(RESET)]"
 re:
 	@$(MAKE) fclean
 	@$(MAKE) all

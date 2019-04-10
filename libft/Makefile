@@ -6,7 +6,7 @@
 #    By: atyczyns <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 10:39:44 by atyczyns          #+#    #+#              #
-#    Updated: 2018/11/22 13:34:00 by atyczyns         ###   ########.fr        #
+#    Updated: 2019/04/10 11:59:24 by atyczyns         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,20 +78,30 @@ SRC = ft_memset.c\
 	  ft_recursive_power.c\
 	  ft_iterative_power.c\
 	  ft_recursive_factorial.c\
-	  ft_iterative_factorial.c
+	  ft_iterative_factorial.c\
+	  rostring.c\
+	  cycle_detector.c\
+	  ft_itoa_base.c
 
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
-$(NAME):
-	gcc -c $(SRC)
-	ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	@gcc -c -Wall -Wextra -Werror $(SRC)
+	@ar rc $(NAME) $(OBJ)
 
 clean :
-	/bin/rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean : clean
-	/bin/rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
+
+cp : re
+	@gcc -Wall -Wextra -Werror $(NAME) ~/42/main.c
+	@rm -f $(OBJ)
+	@./a.out
+
+.PHONY : all, clean, fclean, re, cp
